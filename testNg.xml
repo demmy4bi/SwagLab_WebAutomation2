@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test" verbose="2">
+    <listeners>
+        <listener class-name="Utils.listeners.TestListener"/>
+        <listener class-name="Utils.listeners.AnnotationTransformer"/>
+    </listeners>
+    <test name="Test" parallel="false">
+        <classes>
+            <class name="Tests.Login.ValidateLogin"/>
+            <class name="Tests.Product.CartProduct"/>
+        </classes>
+    </test>
+</suite>
