@@ -85,7 +85,8 @@ public class TestListener extends TestBase implements ITestListener {
 
         String body = ReportUtils.generateAndSendReport(testResults,useCaseResults, context);
 
-        String to = "demmylee56@gmail.com";
+        //String to = "demmylee56@gmail.com,";
+        String to = testBase.getTestData("ToemailField");
         String subject = "TestNG Test Suite Report";
 
         try (PrintWriter out = new PrintWriter(new FileWriter("body.html"))) {

@@ -74,7 +74,7 @@ public class loginPage extends PageBase {
 
     // Method to assert the error message on the login page, parameterized to accept the expected error message
     public void verifyInvalidLoginDetailsErrorMessage(String expectedMessagePart) {
-        // Get the actual success message from the element
+        // Get the actual error message from the element
         waitForVisibility(errorMessageElement);
         String actualMessage = errorMessageElement.getText();
         System.out.println("Actual Error Message: " + actualMessage);

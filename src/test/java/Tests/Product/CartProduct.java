@@ -40,6 +40,7 @@ public class CartProduct extends TestBase {
         prdpage.enterPostalCode("1111");
         prdpage.clickContinueButton();
         prdpage.clickFinishButton();
+        prdpage.verifySuccessCheckoutMessage();
         prdpage.clickBackHomeButton();
         logpage.clickLogoutButton();
 
@@ -63,6 +64,7 @@ public class CartProduct extends TestBase {
         prdpage.enterPostalCode("1111");
         prdpage.clickContinueButton();
         prdpage.clickFinishButton();
+        prdpage.verifySuccessCheckoutMessage();
         logpage.clickLogoutButton();
     }
 

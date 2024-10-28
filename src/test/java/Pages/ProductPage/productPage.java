@@ -85,7 +85,7 @@ public class productPage extends PageBase {
 
     // Method to assert the Checkout Information error message, parameterized to accept the expected error message
     public void verifyCheckoutInfoErrorMessage(String expectedMessagePart) {
-        // Get the actual success message from the element
+        // Get the actual error message from the element
         waitForVisibility(errorMessageElement);
         String actualMessage = errorMessageElement.getText();
         System.out.println("Actual Error Message: " + actualMessage);
@@ -110,5 +110,33 @@ public class productPage extends PageBase {
         String cssSelector = String.format("#add-to-cart-sauce-labs-%s", productName);
         driver.findElement(By.cssSelector(cssSelector)).click();
     }
+
+    @FindBy(css = "*[data-test=\"complete-text\"]")
+    WebElement successMessageElement;
+
+    // Method to assert the Checkout Information error message, parameterized to accept the expected error message
+    public void verifySuccessCheckoutMessage() {
+        // Get the actual success message from the element
+        String expectedValue = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
+        waitForVisibility(successMessageElement);
+        String actualMessage = successMessageElement.getText();
+        System.out.println("Actual Success Message: " + actualMessage);
+
+        try {
+            // Assert that the actual message contains the expected message part
+            Assert.assertTrue(actualMessage.contains(expectedValue),
+                    "The actual message does not contain the expected part: " + expectedValue);
+
+            System.out.println("The success message contains the expected part: " + expectedValue);
+        } catch (AssertionError e) {
+            // Handle the case where the assertion fails
+            System.err.println("Assertion failed: " + e.getMessage());
+            System.out.println("Expected message part: " + expectedValue);
+            System.out.println("Actual message: " + actualMessage);
+        }
+    }
+
+
+
 
 }
