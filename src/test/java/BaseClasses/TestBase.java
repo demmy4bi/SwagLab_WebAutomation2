@@ -153,71 +153,7 @@ public class TestBase extends TestListenerAdapter {
         if (driver != null) {
             driver.quit();
         }
-       // onFinish(null); // Manually trigger onFinish for email
+
     }
-
-//    @Override
-//    public void onFinish(ITestContext context) {
-//        Log.info("Process is onFinish method" + (context != null ? context.getName() : "no context"));
-//        extentReports.flush();
-//
-//        System.out.println("Test suite has finished. Generating report and sending email...");
-//
-//        String reportPath = ExtentManager.getReportPath();
-//        File reportFile = new File(reportPath);
-//
-//        if (!reportFile.exists()) {
-//            System.out.println("Report file not found: " + reportPath);
-//            return;
-//        }
-//
-//        String body = ReportUtils.generateAndSendReport(testResults, context);
-//        String to = "demmylee56@gmail.com";
-//        String subject = "TestNG Test Suite Report";
-//
-//        emailUtils.sendEmail(to, subject, body, reportPath);
-//    }
 }
-
-
-
-
-
-
-
-//extent.flush();
-
-//        EmailUtil.sendEmailWithAttachment(
-//                "demmylee56@gmail.com",
-//                "demmy4bi@gmail.com",
-//                "smtp.gmail.com",
-//                "Test Report",
-//                "Please find the attached test report.",
-//                System.getProperty("user.dir") + "/test-output/ExtentReport.html"
-//        );
-
-
-
-
-
-
-
-//    @AfterClass
-//    public void tearDown() {
-//        if (null != driver) {
-//            driver.quit();
-//        }
-//
-//        extent.flush();
-//
-//        EmailUtil.sendEmailWithAttachment(
-//                "demmylee56@gmail.com",
-//                "demmy4bi@gmail.com",
-//                "smtp.gmail.com",
-//                "Test Report",
-//                "Please find the attached test report.",
-//                System.getProperty("user.dir") + "/test-output/ExtentReport.html"
-//        );
-//    }
-
 
