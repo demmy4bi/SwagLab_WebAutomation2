@@ -27,8 +27,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-   # - name: Build with Maven
-      #run: mvn -B clean install -Dsurefire.suiteXmlFiles="SwagLab_YouVerifyWebAutomation/testNg.xml"
     - name: Run Tests with TestNG
       run: |
         mvn -B clean install -Dsurefire.suiteXmlFiles="testNg.xml"
